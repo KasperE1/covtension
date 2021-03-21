@@ -1,3 +1,21 @@
+html {
+  color: white;
+  background-color: #2C2F33;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadein {
+  from { background-color: white; }
+  to   { background-color: #2C2F33; }
+}
+
+
 .container {
   margin: 1.5em;
   text-align: center;
@@ -5,4 +23,111 @@
 
 .result {
   margin-top: 1em;
+}
+
+/* body {
+  color: white;
+  background-color: #2C2F33;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} */
+
+/* .title {
+  font-size: small;
+  margin-bottom: 5px;
+} */
+
+.classroom-button {
+  border-radius: 15px;
+  background-color: green;
+  border: none;
+  font-size: medium;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  transition: 500ms;
+  margin-top: 15px;
+}
+
+.classroom-button:hover {
+  font-size: large;
+}
+
+.schoolsoft-button {
+  border-radius: 15px;
+  background-color: teal;
+  border: none;
+  font-size: medium;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  transition: 500ms;
+  margin-top: 15px;
+}
+
+.schoolsoft-button:hover {
+  font-size: large;
+}
+
+.jöns-button {
+  border-radius: 15px;
+  background-color: #00cc99;
+  border: none;
+  font-size: medium;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  transition: 500ms;
+  margin-top: 15px;
+}
+
+.jöns-button:hover {
+  font-size: large;
+}
+
+.discord-button {
+  border-radius: 15px;
+  background-color: #7289DA;
+  border: none;
+  font-size: medium;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  transition: 500ms;
+  margin-top: 15px;
+}
+
+.discord-button:hover {
+  font-size: large;
+}
+
+.matte-button {
+  border-radius: 15px;
+  background-color: red;
+  border: none;
+  font-size: medium;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  transition: 500ms;
+  margin-top: 15px;
+}
+
+.matte-button:hover {
+  font-size: large;
+}
+
+.geogebra-button {
+  border-radius: 15px;
+  background-color: lightskyblue;
+  border: none;
+  font-size: medium;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  transition: 500ms;
+  margin-top: 15px;
+}
+
+.geogebra-button:hover {
+  font-size: large;
 }
