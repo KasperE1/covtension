@@ -1,45 +1,40 @@
-// api url 
-const api_url = 
-	"https://api.sl.se/api2/realtimedeparturesV4.json?key=4e65fe39f8304f1f955283cf428ed3ec&siteid=3404&timewindow=15"; 
+const app = document.getElementById('root')
 
-// Defining async function 
-async function getapi(url) { 
-	
-	// Storing response 
-	const response = await fetch(url); 
-	
-	// Storing data in form of JSON 
-	var data = await response.json(); 
-	console.log(data); 
-	if (response) { 
-		hideloader(); 
-	} 
-	show(data); 
-} 
-// Calling that async function 
-getapi(api_url); 
+// const logo = document.createElement('img')
+// logo.src = 'logo.png'
 
-// Function to hide the loader 
-function hideloader() { 
-	document.getElementById('loading').style.display = 'none'; 
-} 
-// Function to define innerHTML for HTML table 
-function show(data) { 
-	let tab = 
-		`<tr> 
-		<th>Destination</th> 
-		<th>Linje</th> 
-		<th>Tid</th>
-		</tr>`; 
-	
-	// Loop to access all rows 
-	for (let r of data.list) { 
-		tab += `<tr> 
-	<td>${r.destination} </td> 
-	<td>${r.linenumber}</td> 
-	<td>${r.displaytime}</td>	 
-</tr>`; 
-	} 
-	// Setting innerHTML as tab variable 
-	document.getElementById("employees").innerHTML = tab; 
-} 
+const container = document.createElement('div')
+container.setAttribute('class', 'container')
+
+// app.appendChild(logo)
+app.appendChild(container)
+
+var request = new XMLHttpRequest()
+request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
+request.onload = function () {
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response)
+  if (request.status >= 200 && request.status < 400) {
+    data.forEach((movie) => {
+      const card = document.createElement('div')
+      card.setAttribute('class', 'card')
+
+      const h1 = document.createElement('h1')
+      h1.textContent = movie.title
+
+      const p = document.createElement('p')
+      movie.description = movie.description.substring(0, 300)
+      p.textContent = `${movie.description}...`
+
+      container.appendChild(card)
+      card.appendChild(h1)
+      card.appendChild(p)
+    })
+  } else {
+    const errorMessage = document.createElement('marquee')
+    errorMessage.textContent = `Gah, it's not working!`
+    app.appendChild(errorMessage)
+  }
+}
+
+request.send()
