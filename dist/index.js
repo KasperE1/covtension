@@ -40,11 +40,17 @@
 
 // request.send();
 
-var url = "https://api.sl.se/api2/realtimedeparturesV4.json?key=4e65fe39f8304f1f955283cf428ed3ec&siteid=3404&timewindow=15";
-fetch(url, {
-  mode: "no-cors"
-}).then(response => {
+fetch('https://api.sl.se/api2/realtimedeparturesV4.json?key=4e65fe39f8304f1f955283cf428ed3ec&siteid=3404&timewindow=15')
+.then(response => {
   return response.json();
 }).then(data => {
   console.log(data);
 })
+
+// const fetchAPI = async => {
+// 	const response = await fetch(`https://api.sl.se/api2/realtimedeparturesV4.json?key=4e65fe39f8304f1f955283cf428ed3ec&siteid=3404&timewindow=15`);
+//   const data = await response.json();
+//   console.log(data);
+// }
+
+// fetchAPI(2);
